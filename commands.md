@@ -316,7 +316,13 @@ docker build -t host-p3-chchao-1       P3/images/host_1
 docker build -t host-p3-chchao-2       P3/images/host_2
 docker build -t host-p3-chchao-3       P3/images/host_3
 ```
+```bash
+docker system prune -a
 
+docker save router-p3-chchao-1  > _chchao-1_host
+
+docker load < _chchao-1_host
+```
 
 ### RR (dagudelo-rr) – config.sh
 Interfaces underlay eth0, eth1, eth2 vers les trois VTEPs ; pas de bridge ni VXLAN.
