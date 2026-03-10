@@ -1,4 +1,9 @@
 #!/bin/sh
+printf 'service integrated-vtysh-config\n' > /etc/frr/vtysh.conf
+chown frr:frr /etc/frr/vtysh.conf 2>/dev/null || true
+chmod 640 /etc/frr/vtysh.conf 2>/dev/null || true
+
+
 ip addr add 10.1.1.2/24 dev eth0
 ip link set eth0 up
 ip link set eth1 up

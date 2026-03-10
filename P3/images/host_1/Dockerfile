@@ -1,4 +1,3 @@
-# P3 host (Alpine). Pas d’IP par défaut ; config.sh au démarrage.
 FROM alpine:latest
 
 RUN apk add --no-cache iproute2
