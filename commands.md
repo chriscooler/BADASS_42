@@ -222,6 +222,7 @@ docker build -t router-p2-dagudelo-1   P2/images/router_1_multicast
 docker build -t router-p2-dagudelo-2   P2/images/router_2_multicast
 ```
 
+
 Topologie : **Ethernet-switch-dagudelo-1** (e0 ↔ router-dagudelo-1 eth0, e1 ↔ router-dagudelo-2 eth0) ; chaque routeur eth1 vers un host. Underlay 10.1.1.0/24 (eth0), overlay 30.1.1.0/24 (bridge br0 + VXLAN VNI 10).
 
 ### router-dagudelo-1 (VXLAN statique, VTEP)
@@ -305,6 +306,17 @@ docker build -t host-p3-dagudelo-1       P3/images/host_1
 docker build -t host-p3-dagudelo-2       P3/images/host_2
 docker build -t host-p3-dagudelo-3       P3/images/host_3
 ```
+
+```bash
+docker build -t rr-p3-chchao           P3/images/rr
+docker build -t router-p3-chchao-1     P3/images/router_1
+docker build -t router-p3-chchao-2     P3/images/router_2
+docker build -t router-p3-chchao-3     P3/images/router_3
+docker build -t host-p3-chchao-1       P3/images/host_1
+docker build -t host-p3-chchao-2       P3/images/host_2
+docker build -t host-p3-chchao-3       P3/images/host_3
+```
+
 
 ### RR (dagudelo-rr) – config.sh
 Interfaces underlay eth0, eth1, eth2 vers les trois VTEPs ; pas de bridge ni VXLAN.
