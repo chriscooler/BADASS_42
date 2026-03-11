@@ -215,11 +215,17 @@ Commandes VXLAN statique, multicast, bridge, FDB, captures réseau, etc.
 
 ### Build des images P2 (noms avec dagudelo)
 À lancer depuis la racine du dépôt (`BADASS/`).
+
+**Unicast (VXLAN point à point) :**
 ```bash
 docker build -t host-p2-dagudelo-1     P2/images/host_1
 docker build -t host-p2-dagudelo-2     P2/images/host_2
-docker build -t router-p2-dagudelo-1   P2/images/router_1_multicast
-docker build -t router-p2-dagudelo-2   P2/images/router_2_multicast
+docker build -t router-p2-dagudelo-1   P2/images/router_1_unicast
+docker build -t router-p2-dagudelo-2   P2/images/router_2_unicast
+docker build -t router-p2-dagudelo-1-u   P2/images/router_1_unicast
+docker build -t router-p2-dagudelo-2-u   P2/images/router_2_unicast
+docker build -t router-p2-dagudelo-1-m   P2/images/router_1_multicast
+docker build -t router-p2-dagudelo-2-m   P2/images/router_2_multicast
 ```
 
 
