@@ -320,8 +320,12 @@ docker build -t host-p3-chchao-3       P3/images/host_3
 docker system prune -a
 
 docker save router-p3-chchao-1  > _chchao-1_host
+docker save router-p3-chchao-2  > _chchao-2_host
+docker save router-p3-chchao-3  > _chchao-3_host
 
 docker load < _chchao-1_host
+docker load < _chchao-2_host
+docker load < _chchao-3_host
 ```
 
 ### RR (dagudelo-rr) – config.sh
