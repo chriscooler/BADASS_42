@@ -10,4 +10,5 @@ RUN printf 'export PATH=/sbin:/usr/sbin:$PATH\n' > /etc/shinit
 
 COPY config.sh /usr/local/bin/config.sh
 RUN chmod +x /usr/local/bin/config.sh
-ENTRYPOINT ["sh", "-c", "/usr/local/bin/config.sh; exec sh"]
+ENTRYPOINT ["sh", "-c", "/usr/local/bin/config.sh; exec /sbin/tini -- /usr/lib/frr/docker-start"]
+
