@@ -1,4 +1,3 @@
-# P2 VTEP (VXLAN statique, VNI 10). eth0 = underlay, eth1 + vxlan10 dans br0.
 FROM frrouting/frr:latest
 
 RUN apk add --no-cache iproute2 iputils tcpdump \
@@ -11,5 +10,5 @@ RUN printf 'export PATH=/sbin:/usr/sbin:$PATH\n' > /etc/shinit
 
 COPY config.sh /usr/local/bin/config.sh
 RUN chmod +x /usr/local/bin/config.sh
-ENTRYPOINT ["sh", "-c", "/usr/local/bin/config.sh; exec sh"]
+ENTRYPOINT ["sh", "-c", "/usr/local/bin/config.sh; exec /sbin/tini -- /usr/lib/frr/docker-start"]
 

@@ -1,4 +1,3 @@
-# P2 host (Alpine, overlay 30.1.1.0/24). config.sh au démarrage.
 FROM alpine:latest
 
 RUN apk add --no-cache iproute2
