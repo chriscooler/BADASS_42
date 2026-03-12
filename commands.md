@@ -314,13 +314,13 @@ docker build -t host-p3-dagudelo-3       P3/images/host_3
 ```
 
 ```bash
-docker build -t rr-p3-chchao           P3/images/rr
-docker build -t router-p3-chchao-1     P3/images/router_1
-docker build -t router-p3-chchao-2     P3/images/router_2
-docker build -t router-p3-chchao-3     P3/images/router_3
-docker build -t host-p3-chchao-1       P3/images/host_1
-docker build -t host-p3-chchao-2       P3/images/host_2
-docker build -t host-p3-chchao-3       P3/images/host_3
+docker build -t rr-p3-chchao           P3/config_files/rr
+docker build -t router-p3-chchao-1     P3/config_files/router_1
+docker build -t router-p3-chchao-2     P3/config_files/router_2
+docker build -t router-p3-chchao-3     P3/config_files/router_3
+docker build -t host-p3-chchao-1       P3/config_files/host_1
+docker build -t host-p3-chchao-2       P3/config_files/host_2
+docker build -t host-p3-chchao-3       P3/config_files/host_3
 ```
 ```bash
 docker system prune -a
