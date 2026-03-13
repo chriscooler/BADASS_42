@@ -9,6 +9,12 @@ ENV ENV=/etc/shinit
 RUN printf 'export PATH=/sbin:/usr/sbin:$PATH\n' > /etc/shinit
 
 COPY config.sh /usr/local/bin/config.sh
+COPY unicast.sh /usr/local/bin/unicast.sh
+COPY multicast.sh /usr/local/bin/multicast.sh
+
+RUN chmod +x /usr/local/bin/unicast.sh
+RUN chmod +x /usr/local/bin/multicast.sh
 RUN chmod +x /usr/local/bin/config.sh
+
 ENTRYPOINT ["sh", "-c", "/usr/local/bin/config.sh; exec sh"]
 
