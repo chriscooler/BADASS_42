@@ -301,17 +301,7 @@ bridge fdb show dev vxlan10
 ## P3
 Commandes OSPF (underlay), BGP EVPN, RR, vérification overlay/underlay.
 
-### Build des images P3 (noms avec dagudelo)
-À lancer depuis la racine du dépôt (`BADASS/`).
-```bash
-docker build -t rr-p3-dagudelo           P3/images/rr
-docker build -t router-p3-dagudelo-1     P3/images/router_1
-docker build -t router-p3-dagudelo-2     P3/images/router_2
-docker build -t router-p3-dagudelo-3     P3/images/router_3
-docker build -t host-p3-dagudelo-1       P3/images/host_1
-docker build -t host-p3-dagudelo-2       P3/images/host_2
-docker build -t host-p3-dagudelo-3       P3/images/host_3
-```
+### Build des images P3 
 
 ```bash
 docker build -t rr-p3-chchao           P3/config_files/rr
@@ -344,9 +334,9 @@ ip link set eth2 up
 /usr/lib/frr/frrinit.sh start
 ```
 
-### RR (dagudelo-rr) – frr.conf / vtysh
+### RR (chchao-rr) – frr.conf / vtysh
 ```text
-hostname dagudelo-rr
+hostname chchao-rr
 no ipv6 forwarding
 !
 interface eth0
@@ -379,7 +369,7 @@ line vty
 !
 ```
 
-### router_1 (dagudelo_1, VTEP) – config.sh
+### router_1 (chchao_1, VTEP) – config.sh
 Underlay eth0, host eth1 dans br0.
 ```bash
 ip link set lo up
@@ -394,9 +384,9 @@ brctl addif br0 eth1
 /usr/lib/frr/frrinit.sh start
 ```
 
-### router_1 (dagudelo_1) – frr.conf / vtysh
+### router_1 (chchao_1) – frr.conf / vtysh
 ```text
-hostname dagudelo_1
+hostname chchao_1
 no ipv6 forwarding
 !
 interface eth0
@@ -419,7 +409,7 @@ router ospf
 !
 ```
 
-### router_2 (dagudelo-2, VTEP) – config.sh
+### router_2 (chchao-2, VTEP) – config.sh
 Underlay eth1, host eth0 dans br0.
 ```bash
 ip link set lo up
@@ -434,9 +424,9 @@ brctl addif br0 eth0
 /usr/lib/frr/frrinit.sh start
 ```
 
-### router_2 (dagudelo-2) – frr.conf / vtysh
+### router_2 (chchao-2) – frr.conf / vtysh
 ```text
-hostname dagudelo-2
+hostname chchao-2
 no ipv6 forwarding
 !
 interface eth1
@@ -459,7 +449,7 @@ router ospf
 !
 ```
 
-### router_3 (dagudelo-3, VTEP) – config.sh
+### router_3 (chchao-3, VTEP) – config.sh
 Underlay eth2, host eth0 dans br0.
 ```bash
 ip link set lo up
@@ -475,9 +465,9 @@ brctl addif br0 eth0
 /usr/lib/frr/frrinit.sh start
 ```
 
-### router_3 (dagudelo-3) – frr.conf / vtysh
+### router_3 (chchao-3) – frr.conf / vtysh
 ```text
-hostname dagudelo-3
+hostname chchao-3
 no ipv6 forwarding
 !
 interface eth2
